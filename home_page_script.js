@@ -10,7 +10,7 @@ function onOpenCvReady() {
 
     // Detect faces
     let faceCascade = new cv.CascadeClassifier();
-    faceCascade.load('haarcascade_frontalface_default.xml');
+    faceCascade.load('/faceshapedetector/haarcascade_frontalface_default.xml');
     let faces = new cv.RectVector();
     let msize = new cv.Size(0, 0);
     faceCascade.detectMultiScale(gray, faces, 1.1, 3, 0, msize, msize);

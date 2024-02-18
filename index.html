@@ -1,0 +1,305 @@
+<html>
+  <style>
+    .ads-container {
+        width: auto;
+        /* Set the desired width */
+        height: auto;
+        /* Set the desired height */
+        margin: 0 auto;
+        /* Center the container horizontally */
+        padding: 10px;
+        /* Add padding if needed */
+        text-align: center;
+        /* Center the content inside the container */
+
+    }
+
+    #home {
+        margin-top: 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #home h1 {
+        text-align: center;
+        font-size: 1.8rem;
+        padding: 10px 0px;
+    }
+
+    @media only screen and (max-width:776px) {
+        #home h1 {
+            font-size: 1.6rem;
+            padding: 20px 12px 12px 12px;
+        }
+    }
+
+    .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        border: 2px solid black;
+        font-size: 1.5rem;
+        text-align: center;
+        background-color: aliceblue;
+        border: 2px solid black;
+        border-radius: 12px;
+        box-shadow: 0px 0px 3px;
+        padding: 4px;
+
+
+    }
+
+    .img_opacity {
+        opacity: 0.5;
+    }
+
+    .img {
+        border-radius: 5px;
+        text-align: center;
+        font-size: initial;
+
+    }
+
+
+    .form input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .preview {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .colored-image {
+        filter: brightness(0.5);
+        /* Adjust the brightness value to change the color intensity */
+    }
+
+    .drop-zone__preview {
+        display: none;
+    }
+
+
+    #img-upload {
+        box-shadow: 0px 0px 5px;
+        max-height: 268px;
+        max-width: max-content;
+        object-fit: cover;
+        box-sizing: border-box;
+
+
+    }
+
+     @media screen and (max-width: 480px) {
+        #img-upload {
+
+            box-shadow: 0px 0px 5px;
+            max-height: 268px;
+            max-width: 320px;
+            object-fit: cover;
+            box-sizing: border-box;
+
+        }
+
+    }
+
+    .result {
+        text-align: center;
+        margin: 14px 10px 0px 10px;
+        font-size: 1.9rem;
+    }
+
+    #h6_title_post {
+        font-size: 1.6rem;
+        text-decoration: none;
+    }
+
+    @media only screen and (max-width:776px) {
+        .result {
+            font-size: none;
+        }
+
+        #h6_title_post {
+            font-size: 1.2rem;
+            text-decoration: none;
+
+        }
+    	.result {
+            text-align: center;
+            margin: 14px 10px 0px 10px;
+            font-size: 1rem;
+    	}
+    }
+
+    .btn-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+
+    
+
+    .h-secondry {
+        margin: 0px 23px 23px;
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .btn-submit {
+        margin: 15px 10px;
+        text-align: center;
+        border-radius: 20px;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: rgb(61, 84, 104);
+        height: 44px;
+        width: 133px;
+        text-decoration: none;
+
+
+    }
+
+
+    .main-drop-zone {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        text-align: center;
+
+    }
+
+    @media only screen and (max-width:317px) {
+        .drop-zone {
+            width: 135px;
+            height: 135px;
+        }
+    }
+
+    .drop-zone {
+        width: 268px;
+        min-height: 268px;
+        height: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 50px;
+        cursor: pointer;
+        color: #959090;
+        border: 4px dashed rgb(61, 84, 104);
+        border-radius: 10px;
+        text-align: center;
+        background-color: aliceblue;
+        box-sizing: border-box;
+
+    }
+    .drop-zone.dark-theme {
+        background-color: #393939 !important
+    }
+
+    .drop-zone__input {
+        display: none;
+    }
+
+    .drop-zone__over {
+        border-style: solid;
+    }
+
+    .drop-zone__preview {
+        display: none;
+    }
+
+    .views-posts {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+    #post {
+        margin: 5px 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .container {
+        max-width: 1000px;
+        /* set your desired width */
+        margin: 0 auto;
+        /* center the container horizontally */
+    }
+
+    .container {
+        min-height: 100%;
+        height: 100%;
+    }    
+</style>
+
+
+<section class="container">
+    <div id="home">
+        <h1 class="h-primary">Discover your face shape by simply uploading a image</h1>
+        <h2 style="margin: 1px 8px 10px;
+        text-align: center; font-size: 1.2em;">For optimal results, it is recommended to upload images that feature
+            properly
+            aligned
+            and clearly visible faces.</h2>
+    </div>
+
+    <form class="img_form">
+        <input type="hidden" name="csrfmiddlewaretoken" value="7zYyRyJE7wWUYqea3AyyVdVaEP7ozJ1M676U2NhAVeC8odF7JJ81VqcZjAtiC4rp">
+        <div class="preview">
+            <div class=" drop-zone">
+                <span id="preview-text" class="drop-zone__prompt">Click to choose image</span>
+                <input type="file" class="drop-zone__input" id="fileInput" name="file" accept="image/*">
+                <img src="" class="drop-zone__preview img " id="img-upload" alt="upload image">
+                <span id="spinner"></span>
+            </div>
+        </div>
+    </form>
+    <div id="rs" class="result"></div>
+    
+    <div class="btn-button">
+        <button id="bt" class="btn-submit" aria-placeholder="submit"> Choose Image </button>
+    </div>
+           <h3> User-Uploaded Images</h3>
+            <p style="margin: 2px 0px;">
+                When you upload an image to our web app, we process the image to determine your face shape. However,
+                we
+                do not store or retain your uploaded images on our servers. 
+                <p style="margin: 2px 0px;">The image is processed temporarily
+                during
+                the backend analysis and is immediately discarded once the face shape is determined. We do not use
+                the
+                images for any other purpose.</p>
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript" src="/home_page_script.js" async></script>
+</section>
+
+
+    </main>
+  <script type="text/javascript" src="/script.js"></script>
+   
+    <footer class="my-footer">
+        <div>
+            
+            <a href="" style="color:white; text-decoration: none;"><p>Your feedback matters! Help us improve</p></a>
+            <p class="center_footer">All right received faceshapedetector</p>
+        </div>
+    </footer>
+</html>

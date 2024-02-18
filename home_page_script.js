@@ -1,3 +1,37 @@
+// Load OpenCV.js
+cv['onRuntimeInitialized'] = () => {
+    // Load the image
+    let imgElement = document.getElementById('img-upload');
+    let mat = cv.imread(imgElement);
+
+    // Convert the image to grayscale
+    let gray = new cv.Mat();
+    cv.cvtColor(mat, gray, cv.COLOR_RGBA2GRAY, 0);
+
+    // Detect faces
+    let faceCascade = new cv.CascadeClassifier();
+    faceCascade.load('haarcascade_frontalface_default.xml');
+    let faces = new cv.RectVector();
+    let msize = new cv.Size(0, 0);
+    faceCascade.detectMultiScale(gray, faces, 1.1, 3, 0, msize, msize);
+
+    // Draw rectangles around the faces
+    for (let i = 0; i < faces.size(); ++i) {
+        let face = faces.get(i);
+        let point1 = new cv.Point(face.x, face.y);
+        let point2 = new cv.Point(face.x + face.width, face.y + face.height);
+        cv.rectangle(mat, point1, point2, [255, 0, 0, 255]);
+    }
+
+    // Display the result
+    cv.imshow('canvasOutput', mat);
+
+    // Clean up
+    gray.delete();
+    faces.delete();
+    mat.delete();
+};
+
 // sand form image into the server
 function sanDer(formData) {
     var token = document.querySelector('[name=csrfmiddlewaretoken]').value;
